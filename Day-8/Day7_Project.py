@@ -4,13 +4,16 @@ import math
 
 def under_26(shift):
     more= math.floor(shift/26)
+    shift=shift-more*26
     return shift
 
 def shift_alphabet(character,shift):
+    if(character==' '):
+        return ' '
     index=pa.alphabet.index(character)
     new_index=index+shift
-    if(index>24):
-        new_index-=24
+    if(new_index>25):
+        new_index-=26
     return pa.alphabet[new_index]
 
 def caesar(text,shift):
@@ -30,6 +33,7 @@ while run:
     direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
     text = input("Type your message:\n").lower()
     shift=under_26(shift=int(input("Type the shift number:\n")))
+    print(shift)
     if(direction=='encode'):
         caesar(text=text,shift=shift)
     else:
