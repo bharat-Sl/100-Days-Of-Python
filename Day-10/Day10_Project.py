@@ -49,7 +49,7 @@ def calc(num1,num2,operation):
     print(f'{num1} {operation} {num2} = {s}')
     return s
 
-
+print(logo)
 first_num=float(input("What's the first number?: "))
 print('+\n-\n*\n/')
 end=False
