@@ -64,6 +64,7 @@ while not end:
     choice=input(f"Type 'y' to continue calculating with {first_num},\nor type 'n' to start a new calculation,\nor type 'exit' to exit: ")
     if(choice.lower()=='n'):
         clear()
+        print(logo)
         first_num=float(input("What's the first number?: "))
     elif(choice.lower()=='exit'):
         end=True
