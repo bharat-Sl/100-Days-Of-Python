@@ -38,21 +38,18 @@ def multiply(num1,num2):
 def divide(num1,num2):
     return num1/num2
 
+operands=['+','-','*','/']
+operations={'+':add,'-':subtract,'*':multiply,'/':divide}
+
 def calc(num1,num2,operation):
     s=0.0
-    if(operation=='+'):
-        s=add(num1,num2)
-    elif(operation=='-'):
-        s=subtract(num1,num2)
-    elif(operation=='*'):
-        s=multiply(num1,num2)
-    else:
-        s=divide(num1,num2)
-        s=round(s,3)
+    func=operations[operation]
+    s=func(num1,num2)
+    s=round(s,3)
     print(f'{num1} {operation} {num2} = {s}')
     return s
 
-operands=['+','-','*','/']
+
 first_num=float(input("What's the first number?: "))
 print('+\n-\n*\n/')
 end=False
