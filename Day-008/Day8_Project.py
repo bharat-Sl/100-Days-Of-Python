@@ -1,5 +1,5 @@
-#Project Day7
-import Day7_project_alphabet as pa
+#Project Day8
+import Day8_project_alphabet as pa
 import math
 
 def under_26(shift):
