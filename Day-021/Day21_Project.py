@@ -1,4 +1,4 @@
-#Project Day20
+#Project Day21
 # snake part 2
 
 import turtle
