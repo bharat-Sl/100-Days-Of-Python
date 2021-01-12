@@ -51,5 +51,4 @@ while game_on:
     if(field.left_score>9):
         game_on=False
         field.game_over("Right")
-    screen.ontimer()
 screen.mainloop()
