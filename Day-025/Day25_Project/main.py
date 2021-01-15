@@ -31,6 +31,8 @@ guessed_states=[]
 guess=0
 while guess<50:
     new_guess=getUserInput(screen,guess).title()
+    if(new_guess=="Exit"):
+        break
     if new_guess in all_states:
         if not new_guess in guessed_states:
             x=int(data_file[data_file.state==new_guess].x)
@@ -38,4 +40,9 @@ while guess<50:
             guessed_states.append(new_guess)
             guess+=1
             correctAnswer(screen,x,y,new_guess)
-screen.exitonclick()
+
+if(guess<50):
+    missed_states=list(set(all_states)-set(guessed_states))
+    new_data=pd.DataFrame(missed_states)
+    new_data.to_csv("states_to_learn.csv")
+
